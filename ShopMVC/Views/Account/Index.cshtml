@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Welcome to your profile page <a href="/Account/Logout">Logout page</a> </h1>
+}
+else
+{
+    <h1>Please go to the <a href="/Account/Login">Login page</a> </h1>
+}

@@ -1,0 +1,26 @@
+﻿@model List<Dictionary<Category, int>>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@foreach (var dictionary in Model)
+{
+    @foreach (var item in dictionary)
+    {
+        <div class="input-checkbox">
+            <input type="checkbox" id="category-1">
+            <label for="category-1">
+                <span></span>
+                @item.Key.CategoryName
+                @if (item.Value != 0)
+                {
+                    <small>(@item.Value)</small>
+                }
+                else
+                {
+                    <small>(0)</small>
+                }
+            </label>
+        </div>
+    }
+}

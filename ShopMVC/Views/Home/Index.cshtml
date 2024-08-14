@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ShopMVC.Models.Product>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="col-md-12">
+    <div class="row">
+        <div class="products-tabs">
+            <!-- tab -->
+            <div id="tab1" class="tab-pane active">
+                <div class="products-slick slick-initialized slick-slider" data-nav="#slick-nav-1">
+                    <!-- product -->
+                    <div class="slick-list draggable">
+                        <div class="slick-track" style="opacity: 1;  transform: translate3d(0px, 0px, 0px);">
+                            @foreach (var item in Model)
+                            {
+                                <div class="product slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="true" tabindex="0" style="width: 263px;height: 485px">
+                                    <div class="product-img">
+                                        <img src="./img/product03.png" alt="">
+                                        <div class="product-label">
+                                            <span class="sale">-30%</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body" style=" height: 220px">
+                                        <p class="product-category">@item.Category.CategoryName</p>
+                                        <h3 class="product-name"><a href="#" tabindex="-1">@item.ProductName</a></h3>
+                                        <h4 class="product-price">@item.ProductPrice</h4>
+                                        <div class="product-rating">
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist" tabindex="-1"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                            <button class="add-to-compare" tabindex="-1"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                            <button class="quick-view" tabindex="-1"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn" tabindex="-1"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <div id="slick-nav-1" class="products-slick-nav"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: inline-block;">Previous</button><button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: inline-block;">Next</button></div>
+            </div>
+            <!-- /tab -->
+        </div>
+    </div>
+</div>
